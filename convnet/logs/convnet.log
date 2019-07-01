@@ -1,0 +1,21 @@
+  !! Note: For this log, we do not shuffle the training data, so the "model input" printed
+  !!       below corresponds to the preprocessing of the first `batch_size` records in the dataset.
+==================================================
+START ONE ITERATION OF TRAINING
+batch number: 0
+model input shape: torch.Size([128, 3, 32, 32])
+model target: (shape=(128,))
+[1 1 0 0 1 0 1 1 1 0 ... 1 0 1 1 0 0 1 0 1 1]
+ 
+Shape of block(3, 16) input: torch.Size([128, 3, 32, 32])
+Shape of block(3, 16) output: torch.Size([128, 16, 32, 32])
+Shape of block(16, 32) input: torch.Size([128, 16, 32, 32])
+Shape of block(16, 32) output: torch.Size([128, 32, 32, 32])
+Shape of block(32, 64) input: torch.Size([128, 32, 16, 16])
+Shape of block(32, 64) output: torch.Size([128, 64, 16, 16])
+Shape of block(64, 128) input: torch.Size([128, 64, 8, 8])
+Shape of block(64, 128) output: torch.Size([128, 128, 8, 8])
+Shape of GlobalMaxPool output: torch.Size([128, 128])
+Shape of output: torch.Size([128, 2])
+==================================================
+FINISH ONE ITERATION OF TRAINING
