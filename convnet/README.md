@@ -67,7 +67,7 @@ The only exception is the "scale" block, which is a less common NN component, bu
   def categorical_cross_entropy(Vector[float] act, Vector[float] pred):
       ent = 0
       for i in range(num_classes):
-          ent += y[i] * log(o[i])
+          ent += act[i] * log(pred[i])
 
       return -1 * ent
   ```
