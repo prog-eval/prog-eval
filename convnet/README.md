@@ -41,6 +41,7 @@ The specific architecture you're to implement is shown in the following diagram:
         - `channel_means[i] = mean(x[:,i,:,:])`
         - `channel_vars[i] = var(x[:,i,:,:])`
       - This is equivalent to `BatchNorm2d(channels, eps=1e-5, momentum=None, affine=False, track_running_stats=False)` in `pytorch`
+      - __Hint:__ Some libraries may require you to set your model to `train` and `eval` mode to ensure that BatchNorm behaves properly.  Making predictions while the model is in `train` mode may result in an annoying-to-debug drop in accuracy.
 
 - MaxPool
     - A MaxPool with filter size 2 maps an input of size `(channels, width, height)` to an output of size `(channels, width / 2, height / 2)`.
