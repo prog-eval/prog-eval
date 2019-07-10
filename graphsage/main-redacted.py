@@ -15,7 +15,14 @@ import numpy as np
 import pandas as pd
 from scipy.io import mmread
 
-from helpers import compute_scores
+# --
+# Helpers
+
+def compute_scores(act, preds):
+    return {
+        "mae"  : np.abs(preds - act).mean(),
+        "corr" : np.corrcoef(preds, act)[0, 1],
+    }
 
 # --
 # User code
