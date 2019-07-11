@@ -72,7 +72,7 @@ def embed_node(node):
 Some relevant parameters are given below (these are also visible in `parse_args` in the code skeleton)
   - Batch size: 256
   - Number of epochs (passes over training data): 3
-  - Number of neighbors: 8
+  - Number of neighbors: 12
   - Optimizer: SGD optimizer (as implemented in `pytorch==1.0.0`)
     - Learning rate: Reduce learning rate linearly from 0.01 to 0 over 3 epochs (updating each minibatch, rather than each epoch)
       - This kind of "learning rate annealing" is a trick that helps models converge more quickly
