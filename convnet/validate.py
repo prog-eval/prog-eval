@@ -8,7 +8,7 @@ import sys
 import json
 import numpy as np
 
-ACC_THRESHOLD = 0.955
+ACC_THRESHOLD = 0.95
 
 if __name__ == '__main__':
     y_test = np.load('data/cifar2/y_test.npy')
