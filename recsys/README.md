@@ -47,9 +47,14 @@ In summary, the pseudocode for the entire algorithm looks like this:
 
 for epoch in epochs:
     for x in make_minibatches(dataset): # each x is a (batch_size x num_items) sparse matrix
-        h1 = relu(x @ W_embedding)                                      # batch_size x emb_dim
-        h2 = relu(dropout(batchnorm(h1) @ W_bottleneck) + B_bottleneck) # batch_size x hidden_dim
-        h3 = sigmoid(dropout(batchnorm(h2)) @ W_output + B_output)      # batch_size x num_items
+        h1 = x @ W_embedding                   # batch_size x emb_dim
+        h1 = dropout(batchnorm(relu(h1))
+        
+        h2 = h1 @ W_bottleneck + B_bottleneck  # batch_size x hidden_dim
+        h2 = dropout(batchnorm(relu(h2)))
+
+        h3 = h2 @ W_output + B_output          # batch_size x num_items
+        h3 = sigmoid(h3)
         
         loss = - 1 * sum(x * log(h) + (1 - x) * log(1 - h))
         Use backpropagation to compute gradient of loss w.r.t. all weight matrices
