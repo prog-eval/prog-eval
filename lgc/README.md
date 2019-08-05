@@ -64,6 +64,7 @@ In the pseudocode above
  - `q_k` and `grad f(q_k)` are vectors. `grad_i f(q_k)` is the i'th element of `grad f(q_k)`.
  - `alpha`, `rho` and `max_iter` are user-supplied parameters
 
+
 To help relieve ambiguity coming from unfamiliar notation, you can also refer to [this alternative pseudocode](https://gist.github.com/bkj/6a7b9db8408d27da255bec6438de655b)
 
 ### Notes
