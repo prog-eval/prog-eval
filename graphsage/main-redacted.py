@@ -84,10 +84,12 @@ if __name__ == "__main__":
     #   - `train_mask` indicates whether each node is in the train or test data split
     #
     # adj: adjacency matrix of the graph.  This is stored on disk in "matrix market" format.
+    # feats: feature matrix (one row per node)
     
-    meta = pd.read_csv(args.meta_path, sep='\t')
-    adj  = mmread(args.graph_path).tocsr()
-
+    meta  = pd.read_csv(args.meta_path, sep='\t')
+    adj   = mmread(args.graph_path).tocsr()
+    feats = np.load(args.feat_path)
+    
     train_meta = meta[meta.train_mask == 1]
     valid_meta = meta[meta.train_mask != 1]
 
