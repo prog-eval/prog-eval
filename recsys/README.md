@@ -17,9 +17,9 @@ The input to the network is a `num_items`-dimensional vector `x` representing a 
 (Note: `@` indicates matrix multiplication and `*` indicates elementwise multiplication).
 
 ```
-h1 = relu(x @ W_embedding)
-h2 = relu(dropout(batchnorm(h1)) @ W_bottleneck + B_bottleneck)
-h3 = sigmoid(dropout(batchnorm(h2)) @ W_output + B_output)
+h1 = dropout(batchnorm(relu(x @ W_embedding)))
+h2 = dropout(batchnorm(relu(h1 @ W_bottleneck + B_bottleneck)))
+h3 = sigmoid(h2 @ W_output + B_output)
 ```
 
 We can then use `h3` to compute the binary cross-entropy loss as follows:
