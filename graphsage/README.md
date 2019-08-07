@@ -18,7 +18,7 @@ The paper describes a number of variants of the algorithm.  We want you to imple
 # Trainable parameters
 
 scale     = sqrt(1 / feature_dim)
-W_encoder = rand_uniform(nrows=2 * feature_dim, ncols=hidden_dim, min=-scale, max=scale)
+W_encoder = rand_uniform(nrows=feature_dim, ncols=hidden_dim, min=-scale, max=scale)
 
 scale     = sqrt(1 / (2 * hidden_dim))
 W_hidden1 = rand_uniform(nrows=2 * hidden_dim, ncols=hidden_dim, min=-scale, max=scale)
