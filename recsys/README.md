@@ -43,7 +43,7 @@ In summary, the pseudocode for the entire algorithm looks like this:
     - Initialize `emb_dim x hidden_dim` matrix `W_bottleneck ~ Uniform(min=-scale, max=scale)`where `scale = 1 / sqrt(emb_dim)`
     - Initialize `hidden_dim x num_items` matrix `W_output ~ Uniform(min=-scale, max=scale)` where `scale = 1 / sqrt(hidden_dim)`
     - Initialize `hidden_dim`-dimensional `B_bottleneck` vector, with all entries equal to `0`
-    - Initialize `hidden_dim`-dimensional `B_output` vector, with all entries equal to `bias_offset`
+    - Initialize `num_items`-dimensional `B_output` vector, with all entries equal to `bias_offset`
 
 for epoch in epochs:
     for x in make_minibatches(dataset): # each x is a (batch_size x num_items) sparse matrix
