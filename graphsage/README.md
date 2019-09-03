@@ -82,7 +82,6 @@ Some relevant parameters are given below (these are also visible in `parse_args`
     - __This is a regression problem__
   - Hidden dimension: 64
   - Initializers: 
-    - Embedding layer: Normal(mean=0, std=1)
     - Linear layers: Uniform(min=-1 / sqrt(input_dim), max=1 / sqrt(input_dim))
 
 
