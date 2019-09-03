@@ -38,7 +38,7 @@ In summary, the pseudocode for the entire algorithm looks like this:
 (Again: `@` indicates matrix multiplication and `*` indicates elementwise multiplication).
 
 ```
-- Initialization
+- Initialize trainable parameters
     - Initialize `num_items x emb_dim` matrix `W_embedding ~ Normal(mean=0, std=0.01)`
     - Initialize `emb_dim x hidden_dim` matrix `W_bottleneck ~ Uniform(min=-scale, max=scale)`where `scale = 1 / sqrt(emb_dim)`
     - Initialize `hidden_dim x num_items` matrix `W_output ~ Uniform(min=-scale, max=scale)` where `scale = 1 / sqrt(hidden_dim)`
